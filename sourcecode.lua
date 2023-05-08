@@ -67,7 +67,7 @@ while true do
 
                           Client.Network.Fire('Farm Coin', i, Pet.uid)
 
-                      end)
+                      end
 
                   end 
 
