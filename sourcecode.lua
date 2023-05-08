@@ -45,8 +45,6 @@ workspace.__THINGS.Orbs.ChildAdded:Connect(function(v)
 end)
 
 
-```lua
-
 task.spawn(function()
 
 while true do 
@@ -86,5 +84,3 @@ while true do
   end 
 
 end)
-
-```
