@@ -44,8 +44,12 @@ workspace.__THINGS.Orbs.ChildAdded:Connect(function(v)
 
 end)
 
+
+```lua
+
+task.spawn(function()
+
 while true do 
-  task.spawn()
 
     if _G.AutoFarm then
 
@@ -59,30 +63,28 @@ while true do
 
                 for _,Pet in next, Pets do 
 
-                    spawn(function()
+                      if _G.AutoFarm then
 
-                        if _G.AutoFarm then
+                          Client.Network.Invoke('Join Coin', i, {Pet.uid})
 
-                            Client.Network.Invoke('Join Coin', i, {Pet.uid})
+                          Client.Network.Fire('Farm Coin', i, Pet.uid)
 
-                            Client.Network.Fire('Farm Coin', i, Pet.uid)
+                      end)
 
-                        end
+                  end 
 
-                    end)
+              end 
 
-                end 
+              repeat task.wait() until not workspace.__THINGS.Coins:FindFirstChild(i)
 
-            end 
+          end 
 
-            repeat task.wait() until not workspace.__THINGS.Coins:FindFirstChild(i)
+      end
 
-        end 
+      task.wait()
 
-        task.wait()
+  end 
 
-    end
+end)
 
-    task.wait()
-
-end 
+```
