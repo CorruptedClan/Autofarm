@@ -53,7 +53,7 @@ while true do
 
         local Pets = GetPets()
 
-        local Coins = GetCoins(_G.Area or 'Town')
+        local Coins = GetCoins(_G.Area)
 
         for i,v in next, Coins do
 
